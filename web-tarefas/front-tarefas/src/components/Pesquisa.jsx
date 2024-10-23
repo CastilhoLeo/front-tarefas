@@ -12,12 +12,14 @@ const Pesquisa = () => {
 
   return (
       <form className='pesquisa' onSubmit={handleSubmit}>
+        <label> SITUAÇÃO:
             <select name="situacao" value={situacao} onChange={(e)=>setSituacao(e.target.value)}>
                 <option value="">TODOS</option>
                 <option value="PENDENTE">PENDENTE</option>
                 <option value="FINALIZADO">FINALIZADO</option>
             </select>
             <button type='submit'>PESQUISAR</button>
+        </label>
       </form>
   )
 }

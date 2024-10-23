@@ -2,6 +2,7 @@
 import './App.css'
 import Header from './components/Header'
 import Pesquisa from './components/Pesquisa'
+import TabelaTarefas from './components/TabelaTarefas'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <div className='App'>
         <Header/>
         <Pesquisa/>
+        <TabelaTarefas/>
       </div>
    
     
