@@ -1,0 +1,16 @@
+.tabelaTarefas{
+   width:100%;
+}
+
+.tabelaTarefas tr{
+    align-items: center;
+    align-content: center;
+}
+.tabelaTarefas th {
+    padding-left: 0;
+}
+
+.tabelaTarefas td {
+    padding-left: 100px;
+   
+}
