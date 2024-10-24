@@ -1,16 +1,28 @@
-.tabelaTarefas{
-   width:100%;
+.tabelaTarefas {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.tabelaTarefas tr{
-    align-items: center;
-    align-content: center;
-}
-.tabelaTarefas th {
-    padding-left: 0;
+.tabelaTarefas td, .tabelaTarefas th{
+    text-align: center;
+    width: 20%;
 }
 
-.tabelaTarefas td {
-    padding-left: 100px;
-   
+.tabelaTarefas th{
+    background-color: rgb(191, 191, 248);
+    height: 30px;
+}
+
+.tabelaTarefas tr:nth-child(even){
+    background-color: rgb(228, 226, 230);
+}
+
+.tabelaTarefas button{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.tabelaTarefas td:last-child {
+    text-align: left; 
 }

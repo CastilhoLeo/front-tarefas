@@ -1,4 +1,5 @@
 
+import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Pesquisa from './components/Pesquisa'
@@ -6,6 +7,10 @@ import TabelaTarefas from './components/TabelaTarefas'
 
 
 function App() {
+
+  const [dados, setDados] = useState([]);
+
+  console.log(dados)
 
   const tarefas = [
     {id:1, titulo:"Teste1", dataVencimento:"23/10/2024", situacao:"PENDENTE"},
@@ -16,7 +21,7 @@ function App() {
     
       <div className='App'>
         <Header/>
-        <Pesquisa/>
+        <Pesquisa setDados={setDados}/>
         <TabelaTarefas tarefas={tarefas} />
       </div>
    
