@@ -1,25 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Pesquisa.css'
 
 const Pesquisa = (props) => {
 
     const [situacao, setSituacao] = useState("");
-    const url = `https://localhost:8080?situacao=${situacao}`;
+    
 
-    const request = async ()=>{
-        const res = await fetch(url)
-        const json = await res.json();
+    const handlePesquisa = (e)=>{        
         
-        return json;
-        console.log(json)
-    }
-
-    const handlePesquisa = (e)=>{
-        e.preventDeefault();
-        request();
+        const request = async ()=>{
+            e.preventDefault();
+            const url = `http://localhost:8080/tarefas?situacao=${situacao}`;
+    
+            const res = await fetch(url)
+            const json = await res.json();
+            
+            props.setDados(json);
         }
-    
-    
+        request();
+
+        }
+        
 
   return (
       <form className='pesquisa' onSubmit={handlePesquisa}>
