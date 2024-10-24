@@ -3,6 +3,7 @@ import './TabelaTarefas.css'
 
 const TabelaTarefas = (props)=>{
 
+
     return(
         <table className='tabelaTarefas'>
             <thead>
@@ -16,14 +17,14 @@ const TabelaTarefas = (props)=>{
             </thead>
 
             <tbody>
-                {props.tarefas.map((t)=>(<tr key={t.id}>
+                {props.dados.map((t)=>(<tr key={t.id}>
                     <td>{t.id}</td>
                     <td>{t.titulo}</td>
                     <td>{t.dataVencimento}</td>
                     <td>{t.situacao}</td>
                     <td>
                         <button>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
-                        <button>EDITAR</button>
+                        <button>VISUALIZAR</button>
                         <button>EXCLUIR</button>
                     </td>
                 </tr>))}

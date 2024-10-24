@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Pesquisa.css'
+import NovaTarefa from './NovaTarefa';
 
 const Pesquisa = (props) => {
 
@@ -15,7 +16,7 @@ const Pesquisa = (props) => {
             const res = await fetch(url)
             const json = await res.json();
             
-            props.setDados(json);
+            props.setDados(json.content);
         }
         request();
 
@@ -23,6 +24,7 @@ const Pesquisa = (props) => {
         
 
   return (
+    <div>
       <form className='pesquisa' onSubmit={handlePesquisa}>
         <label> SITUAÇÃO:
             <select name="situacao" value={situacao} onChange={(e)=>setSituacao(e.target.value)}>
@@ -33,6 +35,8 @@ const Pesquisa = (props) => {
             <button type='submit'>PESQUISAR</button>
         </label>
       </form>
+    <NovaTarefa/>
+    </div>
   )
 }
 
