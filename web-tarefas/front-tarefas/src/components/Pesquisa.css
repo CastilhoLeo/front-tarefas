@@ -29,3 +29,7 @@
     height: 30px;
     width: 150px;
 }
+
+.divPesquisa button:hover{
+    background-color: rgb(185, 180, 180);
+}
