@@ -1,12 +1,10 @@
 .pesquisa{
-    align-content: center;
-    text-align: center;
-    height: 10%;
-    margin-top: 2%;
+    text-align:end;
+    flex-grow: 0.45;
 }
 
 .pesquisa select{
-    margin: 5px;
+    margin: 3px;
     border-radius: 10px;
     height: 30px;
     width: 15%;
@@ -18,13 +16,16 @@
     border-color: #0056b3;
   }
 
-.pesquisa button{
-    border-radius: 10px;
-    height: 30px;
-    width: 10%;
+
+.divPesquisa {
+    display: flex;
+    align-items: center; 
+    height: 20%;
+    width: 100%;
 }
 
-.pesquisa button:focus{
-    border-color: #0056b3;
-
+.divPesquisa button{
+    border-radius: 10px;
+    height: 30px;
+    width: 150px;
 }

@@ -4,7 +4,7 @@ import React from 'react'
 const NovaTarefa = () => {
   return (
     <>
-      <button>Nova Tarefa</button>
+      <button className='novaTarefaBtn'>Nova Tarefa</button>
     </>
   )
 }

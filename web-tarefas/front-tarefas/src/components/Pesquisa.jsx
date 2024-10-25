@@ -24,7 +24,7 @@ const Pesquisa = (props) => {
         
 
   return (
-    <div>
+    <div className='divPesquisa'>
       <form className='pesquisa' onSubmit={handlePesquisa}>
         <label> SITUAÇÃO:
             <select name="situacao" value={situacao} onChange={(e)=>setSituacao(e.target.value)}>
