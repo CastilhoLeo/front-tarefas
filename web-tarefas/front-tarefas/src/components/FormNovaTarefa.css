@@ -1,0 +1,47 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    align-content: center;
+}
+
+.modalContent {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    
+  }
+
+  .formNovaTarefa{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formNovaTarefa label{
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  #dataVencimento{
+    width: 40%;
+    align-self: center;
+    text-align: center;
+  }
+
+  #situacao{
+    width: 40%;
+    align-self: center;
+    text-align: center;
+  }
+
+  .botoesForm{
+    margin-top: 60px;
+  }

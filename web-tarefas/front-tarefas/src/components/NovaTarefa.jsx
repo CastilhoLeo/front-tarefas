@@ -10,7 +10,7 @@ const NovaTarefa = () => {
   console.log(criarTarefa)
 
   const handleClick = ()=>{
-
+      criarTarefa === true ? setCriarTarefa(false):setCriarTarefa(true);
     }
     
 

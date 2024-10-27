@@ -1,8 +1,9 @@
 import React from 'react'
+import FormNovaTarefa from './FormNovaTarefa';
 
 const CadastroTarefa = (props)=>{
     return(
-       <p>teste</p>
+       (props.criarTarefa && <FormNovaTarefa setCriarTarefa={props.setCriarTarefa}/>)
     )
 }
 
