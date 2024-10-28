@@ -1,28 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import './Pesquisa.css'
 import NovaTarefa from './NovaTarefa';
+import api from '/src/services/Requests'
 
 const Pesquisa = (props) => {
 
     const [situacao, setSituacao] = useState("");
     
-    
-    
-    const handlePesquisa = (e)=>{        
-        
-        const request = async ()=>{
-            e.preventDefault();
-            const url = `http://localhost:8080/tarefas?situacao=${situacao}`;
-    
-            const res = await fetch(url)
-            const json = await res.json();
-            
-            props.setDados(json.content);
-        }
-        request();
+    useEffect(()=>{
+    ()=>api.requestInicial(props.setDados)}
+    )
 
-        }
+    const handlePesquisa = (e)=>{           
         
+        api.request(e,situacao,props.setDados);
+        }
+     
 
   return (
     <div className='divPesquisa'>

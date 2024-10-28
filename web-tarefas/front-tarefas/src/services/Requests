@@ -1,0 +1,29 @@
+
+
+const requestInicial = async (setDados)=>{
+    const url = `http://localhost:8080/tarefas?situacao=${null}`;
+
+    const res = await fetch(url)
+    const json = await res.json();
+    
+    setDados(json.content);
+}
+
+const request = async (e, situacao, setDados)=>{
+    e.preventDefault();
+    const url = `http://localhost:8080/tarefas?situacao=${situacao}`;
+
+    const res = await fetch(url)
+    const json = await res.json();
+    
+    setDados(json.content);
+}
+
+
+const excluir = (id)=>{
+    const url = `http://localhost:8080/tarefas/${id}`
+    
+    fetch(url,{method:"DELETE"})
+}
+
+export default {request, excluir, requestInicial};
