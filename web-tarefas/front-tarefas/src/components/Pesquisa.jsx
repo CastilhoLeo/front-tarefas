@@ -6,7 +6,8 @@ const Pesquisa = (props) => {
 
     const [situacao, setSituacao] = useState("");
     
-
+    
+    
     const handlePesquisa = (e)=>{        
         
         const request = async ()=>{

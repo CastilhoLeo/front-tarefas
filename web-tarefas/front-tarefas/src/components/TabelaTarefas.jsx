@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './TabelaTarefas.css'
 
 const TabelaTarefas = (props)=>{
+
+
+    const excluir = (id)=>{
+        const url = `http://localhost:8080/tarefas/${id}`
+        
+        fetch(url,{method:"DELETE"})
+    }
 
 
     return(
@@ -25,7 +32,7 @@ const TabelaTarefas = (props)=>{
                     <td>
                         <button>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
                         <button>VISUALIZAR</button>
-                        <button>EXCLUIR</button>
+                        <button onClick={()=>excluir(t.id)}>EXCLUIR</button>
                     </td>
                 </tr>))}
             </tbody>
