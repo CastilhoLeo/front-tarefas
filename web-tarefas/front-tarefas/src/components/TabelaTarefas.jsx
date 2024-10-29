@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './TabelaTarefas.css'
 import api from '/src/services/Requests'
+import NovaTarefa from './NovaTarefa'
 
 const TabelaTarefas = (props)=>{
 
@@ -8,6 +9,10 @@ const TabelaTarefas = (props)=>{
         if (window.confirm("Tem certeza?")){
             api.excluir(id);
         }
+    }
+
+    const handleVisualizarTarefa=()=>{
+
     }
 
     return(
