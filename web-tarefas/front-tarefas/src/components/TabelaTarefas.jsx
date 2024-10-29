@@ -4,9 +4,11 @@ import api from '/src/services/Requests'
 
 const TabelaTarefas = (props)=>{
 
-
-   
-
+    const handleExcluir = (id)=>{
+        if (window.confirm("Tem certeza?")){
+            api.excluir(id);
+        }
+    }
 
     return(
         <table className='tabelaTarefas'>
@@ -29,7 +31,7 @@ const TabelaTarefas = (props)=>{
                     <td>
                         <button>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
                         <button>VISUALIZAR</button>
-                        <button onClick={()=>api.excluir(t.id)}>EXCLUIR</button>
+                        <button onClick={()=>handleExcluir(t.id)}>EXCLUIR</button>
                     </td>
                 </tr>))}
             </tbody>

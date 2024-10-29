@@ -7,9 +7,6 @@ const Pesquisa = (props) => {
 
     const [situacao, setSituacao] = useState("");
     
-    useEffect(()=>{
-    ()=>api.requestInicial(props.setDados)}
-    )
 
     const handlePesquisa = (e)=>{           
         

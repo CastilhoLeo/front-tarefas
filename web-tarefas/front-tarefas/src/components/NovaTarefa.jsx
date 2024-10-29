@@ -7,7 +7,6 @@ const NovaTarefa = () => {
 
   const [criarTarefa, setCriarTarefa] = useState(false)
 
-  console.log(criarTarefa)
 
   const handleClick = ()=>{
       criarTarefa === true ? setCriarTarefa(false):setCriarTarefa(true);
