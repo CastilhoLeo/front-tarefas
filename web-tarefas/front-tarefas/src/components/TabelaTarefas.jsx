@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './TabelaTarefas.css'
 import api from '/src/services/Requests'
 import NovaTarefa from './NovaTarefa'
 
 const TabelaTarefas = (props)=>{
+
+    const [tarefaEditar, setTarefaEditar] = useState(null);
 
     const handleExcluir = (id)=>{
         if (window.confirm("Tem certeza?")){
@@ -11,9 +13,13 @@ const TabelaTarefas = (props)=>{
         }
     }
 
-    const handleVisualizarTarefa=()=>{
 
+    const handleEditar = (tarefaEditar)=>{
+        props.setEditarTarefa(true)
+        props.setCriarTarefa(true)
+        props.setTarefaEditar(tarefaEditar);
     }
+
 
     return(
         <table className='tabelaTarefas'>
@@ -35,7 +41,7 @@ const TabelaTarefas = (props)=>{
                     <td>{t.situacao}</td>
                     <td>
                         <button>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
-                        <button>VISUALIZAR</button>
+                        <button onClick={()=>handleEditar(t)}>VISUALIZAR</button>
                         <button onClick={()=>handleExcluir(t.id)}>EXCLUIR</button>
                     </td>
                 </tr>))}

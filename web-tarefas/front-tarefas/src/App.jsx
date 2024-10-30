@@ -10,6 +10,10 @@ import NovaTarefa from './components/NovaTarefa'
 function App() {
 
   const [dados, setDados] = useState([]);
+  const [editarTarefa, setEditarTarefa] = useState(false)
+  const [criarTarefa, setCriarTarefa] = useState(false)
+  const [tarefaEditar, setTarefaEditar] = useState(null)
+
 
 
 
@@ -17,8 +21,8 @@ function App() {
     
       <div className='App'>
         <Header/>
-        <Pesquisa setDados={setDados}/>
-        <TabelaTarefas dados={dados} />
+        <Pesquisa setDados={setDados} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa}/>
+        <TabelaTarefas dados={dados} editarTarefa={editarTarefa} setEditarTarefa={setEditarTarefa} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa} tarefaEditar={tarefaEditar} setTarefaEditar={setTarefaEditar} />
       </div>
    
     
