@@ -10,6 +10,12 @@ const TabelaTarefas = (props)=>{
         }
     }
 
+    const handleEditar = ()=>{
+        props.setEditarTarefa(true)
+        props.setCriarTarefa(true)
+    }
+
+
     return(
         <table className='tabelaTarefas'>
             <thead>
@@ -30,7 +36,7 @@ const TabelaTarefas = (props)=>{
                     <td>{t.situacao}</td>
                     <td>
                         <button>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
-                        <button>VISUALIZAR</button>
+                        <button onClick={()=>handleEditar()}>VISUALIZAR</button>
                         <button onClick={()=>handleExcluir(t.id)}>EXCLUIR</button>
                     </td>
                 </tr>))}

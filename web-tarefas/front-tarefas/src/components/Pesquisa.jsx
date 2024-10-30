@@ -26,7 +26,7 @@ const Pesquisa = (props) => {
             <button type='submit'>PESQUISAR</button>
         </label>
       </form>
-    <NovaTarefa/>
+    <NovaTarefa criarTarefa={props.criarTarefa} setCriarTarefa={props.setCriarTarefa}/>
     </div>
   )
 }
