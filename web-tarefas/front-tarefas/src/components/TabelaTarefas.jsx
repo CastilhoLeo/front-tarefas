@@ -14,12 +14,6 @@ const TabelaTarefas = (props)=>{
     }
 
 
-    const handleEditar = (tarefaEditar)=>{
-        props.setEditarTarefa(true)
-        props.setCriarTarefa(true)
-        props.setTarefaEditar(tarefaEditar);
-    }
-
 
     return(
         <table className='tabelaTarefas'>

@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Pesquisa from './components/Pesquisa'
 import TabelaTarefas from './components/TabelaTarefas'
 import NovaTarefa from './components/NovaTarefa'
+import FormNovaTarefa from './components/FormNovaTarefa'
 
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
   const [dados, setDados] = useState([]);
   const [editarTarefa, setEditarTarefa] = useState(false)
   const [criarTarefa, setCriarTarefa] = useState(false)
-  const [tarefaEditar, setTarefaEditar] = useState(null)
 
 
 
@@ -22,7 +22,7 @@ function App() {
       <div className='App'>
         <Header/>
         <Pesquisa setDados={setDados} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa}/>
-        <TabelaTarefas dados={dados} editarTarefa={editarTarefa} setEditarTarefa={setEditarTarefa} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa} tarefaEditar={tarefaEditar} setTarefaEditar={setTarefaEditar} />
+        <TabelaTarefas dados={dados} editarTarefa={editarTarefa} setEditarTarefa={setEditarTarefa} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa}/>
       </div>
    
     
