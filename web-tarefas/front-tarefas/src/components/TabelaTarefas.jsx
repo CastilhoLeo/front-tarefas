@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './TabelaTarefas.css'
 import api from '/src/services/Requests'
-import NovaTarefa from './NovaTarefa'
+//import NovaTarefa from './NovaTarefa'
 
 const TabelaTarefas = (props)=>{
 
@@ -13,7 +13,9 @@ const TabelaTarefas = (props)=>{
         }
     }
 
-
+    const handleEditar = ()=>{
+        props.setFormTarefa(true)
+    }
 
     return(
         <table className='tabelaTarefas'>

@@ -71,7 +71,7 @@ const FormNovaTarefa = (props) => {
         </select>
         <div className='botoesForm'>
         <button type='submit'>Salvar</button>
-        <button type='button' onClick={()=>props.setCriarTarefa(false)}>Fechar</button>
+        <button type='button' onClick={()=>props.setFormTarefa(false)}>Fechar</button>
         </div>
       </form>
       

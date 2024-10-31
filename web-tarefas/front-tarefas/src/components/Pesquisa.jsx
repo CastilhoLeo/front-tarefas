@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Pesquisa.css'
-import NovaTarefa from './NovaTarefa';
+// import NovaTarefa from './NovaTarefa';
 import api from '/src/services/Requests'
 
 const Pesquisa = (props) => {
@@ -26,7 +26,7 @@ const Pesquisa = (props) => {
             <button type='submit'>PESQUISAR</button>
         </label>
       </form>
-    <NovaTarefa criarTarefa={props.criarTarefa} setCriarTarefa={props.setCriarTarefa}/>
+    {/* <NovaTarefa criarTarefa={props.criarTarefa} setCriarTarefa={props.setCriarTarefa}/> */}
     </div>
   )
 }

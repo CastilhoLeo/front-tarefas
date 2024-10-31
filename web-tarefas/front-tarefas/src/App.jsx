@@ -4,15 +4,16 @@ import './App.css'
 import Header from './components/Header'
 import Pesquisa from './components/Pesquisa'
 import TabelaTarefas from './components/TabelaTarefas'
-import NovaTarefa from './components/NovaTarefa'
+//import NovaTarefa from './components/NovaTarefa'
 import FormNovaTarefa from './components/FormNovaTarefa'
+import NovaTarefa from './components/NovaTarefa'
 
 
 function App() {
 
   const [dados, setDados] = useState([]);
-  const [editarTarefa, setEditarTarefa] = useState(false)
-  const [criarTarefa, setCriarTarefa] = useState(false)
+  const [formTarefa, setFormTarefa] = useState(false)
+ 
 
 
 
@@ -21,8 +22,10 @@ function App() {
     
       <div className='App'>
         <Header/>
-        <Pesquisa setDados={setDados} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa}/>
-        <TabelaTarefas dados={dados} editarTarefa={editarTarefa} setEditarTarefa={setEditarTarefa} criarTarefa={criarTarefa} setCriarTarefa={setCriarTarefa}/>
+        <Pesquisa setDados={setDados}/> 
+        <NovaTarefa formTarefa={formTarefa} setFormTarefa={setFormTarefa}/>
+        <TabelaTarefas dados={dados} formTarefa={formTarefa} setFormTarefa={setFormTarefa}/>
+        {formTarefa && <FormNovaTarefa formTarefa={formTarefa} setFormTarefa={setFormTarefa}/>}
       </div>
    
     
