@@ -3,12 +3,7 @@ import './FormNovaTarefa.css'
 
 const FormNovaTarefa = (props) => {
 
-  const[tarefa, setTarefa] = useState({
-    titulo:"",
-    descricao:"",
-    dataVencimento:"",
-    situacao:"PENDENTE"
-  })
+  const[tarefa, setTarefa] = useState(props.tarefa)
 
 
 

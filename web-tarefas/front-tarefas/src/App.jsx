@@ -13,6 +13,12 @@ function App() {
 
   const [dados, setDados] = useState([]);
   const [formTarefa, setFormTarefa] = useState(false)
+  const [tarefa, setTarefa] = useState({
+    titulo:"",
+    descricao:"",
+    dataVencimento:"",
+    situacao:"PENDENTE"
+  })
  
 
 
@@ -24,8 +30,8 @@ function App() {
         <Header/>
         <Pesquisa setDados={setDados}/> 
         <NovaTarefa formTarefa={formTarefa} setFormTarefa={setFormTarefa}/>
-        <TabelaTarefas dados={dados} formTarefa={formTarefa} setFormTarefa={setFormTarefa}/>
-        {formTarefa && <FormNovaTarefa formTarefa={formTarefa} setFormTarefa={setFormTarefa}/>}
+        <TabelaTarefas dados={dados} formTarefa={formTarefa} setFormTarefa={setFormTarefa} tarefa={tarefa} setTarefa={setTarefa}/>
+        {formTarefa && <FormNovaTarefa formTarefa={formTarefa} setFormTarefa={setFormTarefa} tarefa={tarefa} setTarefa={setTarefa}/>}
       </div>
    
     

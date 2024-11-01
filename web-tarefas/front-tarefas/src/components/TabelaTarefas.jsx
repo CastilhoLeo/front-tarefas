@@ -13,8 +13,18 @@ const TabelaTarefas = (props)=>{
         }
     }
 
-    const handleEditar = ()=>{
+    const handleEditar = (t)=>{
         props.setFormTarefa(true)
+        props.setTarefa(t)
+    }
+
+    const handleSituacao = (t)=>{
+        if(t.situacao==="PENDENTE"){
+            t.situacao="FINALIZADO"
+        } else{
+            t.situacao="PENDENTE"
+        }
+        api.atualizar(t);
     }
 
     return(
@@ -23,6 +33,7 @@ const TabelaTarefas = (props)=>{
             <tr>
                 <th>Id</th>
                 <th>Titulo</th>
+                <th>Descrição</th>
                 <th>Data Vencimento</th>
                 <th>Situação</th>
                 <th></th>
@@ -33,10 +44,11 @@ const TabelaTarefas = (props)=>{
                 {props.dados.map((t)=>(<tr key={t.id}>
                     <td>{t.id}</td>
                     <td>{t.titulo}</td>
+                    <td>{t.descricao}</td>
                     <td>{t.dataVencimento}</td>
                     <td>{t.situacao}</td>
                     <td>
-                        <button>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
+                        <button onClick={()=>handleSituacao(t)}>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
                         <button onClick={()=>handleEditar(t)}>VISUALIZAR</button>
                         <button onClick={()=>handleExcluir(t.id)}>EXCLUIR</button>
                     </td>
