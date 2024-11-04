@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './TabelaTarefas.css'
 import api from '/src/services/Requests'
-//import NovaTarefa from './NovaTarefa'
 
 const TabelaTarefas = (props)=>{
 
     const [tarefaEditar, setTarefaEditar] = useState(null);
 
-    const handleExcluir = (id)=>{
+    
+    const handleExcluir = async (id)=>{
         if (window.confirm("Tem certeza?")){
-            api.excluir(id);
+            await api.excluir(id);
         }
+        props.setRefresh(!props.refresh)
+        console.log(props.refresh)
     }
 
     const handleEditar = (t)=>{

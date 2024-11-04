@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './FormNovaTarefa.css'
 
 const FormNovaTarefa = (props) => {
 
   const[tarefa, setTarefa] = useState(props.tarefa)
-
+  const[erro, setErro] = useState("")
 
 
   const handleSubmit = (e)=>{
@@ -13,7 +13,7 @@ const FormNovaTarefa = (props) => {
     const request = async ()=>{
 
       const url = `http://localhost:8080/tarefas`;
-      
+
       const res = await fetch(url,{
         method:"POST",
         headers:{
@@ -23,17 +23,17 @@ const FormNovaTarefa = (props) => {
       body: JSON.stringify(tarefa)
         
     });
-      
-  }
-  request();
 
+   }
+
+  request();
+    
   setTarefa({titulo:"",
     descricao:"",
     dataVencimento:"",
     situacao:"PENDENTE"})
   }
 
-  
 
   const handleChange = (campo, valor)=>{
 
@@ -42,6 +42,14 @@ const FormNovaTarefa = (props) => {
         [campo]:valor,
     }));
 
+  }
+
+  const handleFechar = ()=>{
+    props.setFormTarefa(false)
+    props.setTarefa({titulo:"",
+      descricao:"",
+      dataVencimento:"",
+      situacao:"PENDENTE"})
   }
  
 
@@ -66,7 +74,7 @@ const FormNovaTarefa = (props) => {
         </select>
         <div className='botoesForm'>
         <button type='submit'>Salvar</button>
-        <button type='button' onClick={()=>props.setFormTarefa(false)}>Fechar</button>
+        <button type='button' onClick={()=>handleFechar()}>Fechar</button>
         </div>
       </form>
       

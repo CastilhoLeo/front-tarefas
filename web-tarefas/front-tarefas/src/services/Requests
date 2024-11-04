@@ -10,11 +10,21 @@ const request = async (e, situacao, setDados)=>{
     setDados(json.content);
 }
 
+const requestInicial = async (situacao, setDados)=>{
+    const url = `http://localhost:8080/tarefas?situacao=${situacao}`;
 
-const excluir = (id)=>{
+    const res = await fetch(url)
+    const json = await res.json();
+    
+    setDados(json.content);
+}
+
+
+const excluir = async (id)=>{
     const url = `http://localhost:8080/tarefas/${id}`
     
-    fetch(url,{method:"DELETE"})
+    await fetch(url,{method:"DELETE"});
+
 }
 
 
@@ -23,4 +33,4 @@ const atualizar = (tarefa)=>{
     fetch(url,{method:"PUT",headers:{"Content-Type": "application/json"}, body:JSON.stringify(tarefa)})
 }
 
-export default {request, excluir, atualizar};
+export default {request, excluir, atualizar, requestInicial};

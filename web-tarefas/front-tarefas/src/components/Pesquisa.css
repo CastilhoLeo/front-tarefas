@@ -1,6 +1,5 @@
 .pesquisa{
-    text-align:end;
-    flex-grow: 0.45;
+    text-align:center;
 }
 
 .pesquisa select{
@@ -18,7 +17,6 @@
 
 
 .divPesquisa {
-    display: flex;
     align-items: center; 
     height: 10%;
     width: 100%;
