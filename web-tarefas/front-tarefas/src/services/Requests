@@ -28,9 +28,9 @@ const excluir = async (id)=>{
 }
 
 
-const atualizar = (tarefa)=>{
+const atualizar = async (tarefa)=>{
     const url = `http://localhost:8080/tarefas/${tarefa.id}`
-    fetch(url,{method:"PUT",headers:{"Content-Type": "application/json"}, body:JSON.stringify(tarefa)})
+    await fetch(url,{method:"PUT",headers:{"Content-Type": "application/json"}, body:JSON.stringify(tarefa)});
 }
 
 export default {request, excluir, atualizar, requestInicial};

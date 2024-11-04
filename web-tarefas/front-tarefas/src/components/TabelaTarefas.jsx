@@ -12,21 +12,23 @@ const TabelaTarefas = (props)=>{
             await api.excluir(id);
         }
         props.setRefresh(!props.refresh)
-        console.log(props.refresh)
+
     }
 
-    const handleEditar = (t)=>{
-        props.setFormTarefa(true)
-        props.setTarefa(t)
+    const handleEditar = async (t)=>{
+         props.setFormTarefa(true)
+         await props.setTarefa(t)
+
     }
 
-    const handleSituacao = (t)=>{
+    const handleSituacao = async (t)=>{
         if(t.situacao==="PENDENTE"){
             t.situacao="FINALIZADO"
         } else{
             t.situacao="PENDENTE"
         }
-        api.atualizar(t);
+         await api.atualizar(t);
+         props.setRefresh(!props.refresh)
     }
 
     return(

@@ -24,9 +24,18 @@ const FormNovaTarefa = (props) => {
         
     });
 
+
+    if (res.ok){
+      alert("cadastro realizado com sucesso")
+    } else{
+      const err = await res.json()
+      alert(err.message)
+    }
+
    }
 
   request();
+  
     
   setTarefa({titulo:"",
     descricao:"",
