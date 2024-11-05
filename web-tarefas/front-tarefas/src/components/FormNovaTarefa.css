@@ -23,11 +23,13 @@
   .formNovaTarefa{
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   .formNovaTarefa label{
     font-weight: bold;
     margin-top: 20px;
+    text-align: center;
   }
 
   #dataVencimento{
@@ -43,5 +45,6 @@
   }
 
   .botoesForm{
-    margin-top: 60px;
+    margin-top: 50px;
+    align-self: center;
   }
