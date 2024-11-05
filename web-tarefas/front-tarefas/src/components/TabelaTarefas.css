@@ -23,6 +23,16 @@
     border-radius: 10px;
 }
 
+.finalizar{
+    background-color: rgb(125, 247, 125);
+}
+
+.reabrir{
+    background-color: rgb(247, 83, 83);
+}
+
 .tabelaTarefas td:last-child {
     text-align: left; 
 }
+
+

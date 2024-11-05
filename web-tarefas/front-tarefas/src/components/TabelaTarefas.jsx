@@ -52,7 +52,7 @@ const TabelaTarefas = (props)=>{
                     <td>{t.dataVencimento}</td>
                     <td>{t.situacao}</td>
                     <td>
-                        <button onClick={()=>handleSituacao(t)}>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
+                        <button className={t.situacao === "PENDENTE"? "finalizar":"reabrir"} onClick={()=>handleSituacao(t)}>{t.situacao === "PENDENTE"? "FINALIZAR":"REABRIR"}</button> 
                         <button onClick={()=>handleEditar(t)}>VISUALIZAR</button>
                         <button onClick={()=>handleExcluir(t.id)}>EXCLUIR</button>
                     </td>
