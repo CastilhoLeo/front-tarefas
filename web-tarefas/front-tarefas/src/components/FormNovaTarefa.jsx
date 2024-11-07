@@ -12,7 +12,7 @@ const FormNovaTarefa = (props) => {
 
     const request = async ()=>{
 
-      const url = `http://localhost:8080/tarefas`;
+      const url = `https://api-tarefas-9v0k.onrender.com/tarefas`;
 
       const res = await fetch(url,{
         method:"POST",

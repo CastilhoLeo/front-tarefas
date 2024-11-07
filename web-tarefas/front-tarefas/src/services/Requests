@@ -2,7 +2,7 @@
 
 const request = async (e, situacao, setDados)=>{
     e.preventDefault();
-    const url = `http://localhost:8080/tarefas?situacao=${situacao}`;
+    const url = `https://api-tarefas-9v0k.onrender.com/tarefas?situacao=${situacao}`;
 
     const res = await fetch(url)
     const json = await res.json();
@@ -11,7 +11,7 @@ const request = async (e, situacao, setDados)=>{
 }
 
 const requestInicial = async (situacao, setDados)=>{
-    const url = `http://localhost:8080/tarefas?situacao=${situacao}`;
+    const url = `https://api-tarefas-9v0k.onrender.com/tarefas?situacao=${situacao}`;
 
     const res = await fetch(url)
     const json = await res.json();
@@ -21,7 +21,7 @@ const requestInicial = async (situacao, setDados)=>{
 
 
 const excluir = async (id)=>{
-    const url = `http://localhost:8080/tarefas/${id}`
+    const url = `https://api-tarefas-9v0k.onrender.com/tarefas/${id}`
     
     await fetch(url,{method:"DELETE"});
 
@@ -29,7 +29,7 @@ const excluir = async (id)=>{
 
 
 const atualizar = async (tarefa)=>{
-    const url = `http://localhost:8080/tarefas/${tarefa.id}`
+    const url = `https://api-tarefas-9v0k.onrender.com/tarefas/${tarefa.id}`
     await fetch(url,{method:"PUT",headers:{"Content-Type": "application/json"}, body:JSON.stringify(tarefa)});
 }
 
